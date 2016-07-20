@@ -1,0 +1,105 @@
+$helper.button {
+  border: 0
+  background: none
+  font-size: 1em
+}
+
+$ButtonConfig = {
+  width: 120
+  height: 40
+  radius: $radius.default
+  text: $colorVariations.primary.text
+  bg: $colorVariations.primary.bg
+  border: $colorVariations.primary.border
+  variations: {
+    secondary: {
+      text: $colorVariations.secondary.text
+      bg: $colorVariations.secondary.bg
+      border: $colorVariations.secondary.border
+    }
+    tertiary: {
+      text: $colorVariations.tertiary.text
+      bg: $colorVariations.tertiary.bg
+      border: $colorVariations.tertiary.border
+    }
+    warn: {
+      text: $colorVariations.fourthiary.text
+      lightText: $colorVariations.fourthiary.text
+      bg: $colorVariations.fourthiary.bg
+      border: $colorVariations.fourthiary.border
+    }
+    error: {
+      text: $colorVariations.fifthiary.text
+      bg: $colorVariations.fifthiary.bg
+      border: $colorVariations.fifthiary.border
+    }
+    cancel: {
+      text: $colorVariations.cancel.text
+      lightText: $colors.text
+      bg: $colorVariations.cancel.bg
+      border: $colorVariations.cancel.border
+    }
+  }
+}
+
+.Button {
+  @extend $helper.button
+  width: unit($ButtonConfig.width, 'px')
+  height: unit($ButtonConfig.height, 'px')
+  border: 1px solid transparent
+  border-radius: $radius.default
+  text-transform: uppercase
+  background-color: $ButtonConfig.bg
+  color: $ButtonConfig.text
+  cursor: pointer
+  transition: all 170ms ease
+
+
+  &:hover,
+  &:focus {
+    border-color: $ButtonConfig.border
+    background: none
+
+    if ($ButtonConfig.lightText) {
+      color: $ButtonConfig.lightText
+    }
+    else {
+      color: $ButtonConfig.border
+    }
+  }
+
+  for key, val in $ButtonConfig.variations {
+    &--{key} {
+      background-color: val.bg
+      color: val.text
+
+      &:hover,
+      &:focus {
+        border-color: val.border
+        background: none
+
+        if (val.lightText) {
+          color: val.lightText
+        }
+        else {
+          color: val.bg
+        }
+      }
+    }
+  }
+
+  &--chips {
+    border-radius: 20px
+  }
+
+  &[disabled] {
+    background-color: $ButtonConfig.variations.cancel.bg
+    color: $ButtonConfig.variations.cancel.text
+
+    &:hover,
+    &:focus {
+      border-color: transparent
+      cursor: default
+    }
+  }
+}

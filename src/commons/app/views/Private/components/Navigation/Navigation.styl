@@ -1,0 +1,13 @@
+$Navigation = {
+  colors: {
+    start: #045f85
+    end: #1a7397
+  }
+}
+
+.Navigation {
+  min-width: 250px
+  max-width: @min-width
+  background-color: $Navigation.colors.start
+  background-image: linear-gradient(to bottom, $Navigation.colors.start 0, $Navigation.colors.end 100%)
+}

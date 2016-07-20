@@ -1,0 +1,23 @@
+$Grid = {
+  defaultGutter: 10
+}
+
+.Grid {
+  overflow: hidden
+
+  &__container {
+    display: flex
+    flex-wrap: wrap
+    margin: - unit($Grid.defaultGutter, 'px')
+
+    &__el {
+      padding: unit($Grid.defaultGutter, 'px')
+
+      for i in 1..6 {
+        .Grid--size{i} & {
+          width: unit(100 / i, '%')
+        }
+      }
+    }
+  }
+}
