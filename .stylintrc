@@ -15,7 +15,7 @@
   "indentPref": 2,
   "leadingZero": "never",
   "maxErrors": false,
-  "maxWarnings": false,
+  "maxWarnings": 10,
   "mixed": false,
   "namingConvention": false,
   "namingConventionStrict": false,

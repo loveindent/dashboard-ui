@@ -130,6 +130,8 @@ node_modules
 client/bower_component
 
 ### Project ###
+.eslintcache
+.tmp
 bundle.js
 main.css
 *.marko.js

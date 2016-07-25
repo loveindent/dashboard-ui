@@ -26,27 +26,27 @@ export default class Home extends React.Component {
     const chartData = [
       {
         value: 300,
-        color: "#f3ffbd",
-        highlight: "#FF5A5E",
-        label: "Red"
+        color: '#f3ffbd',
+        highlight: '#FF5A5E',
+        label: 'Red'
       },
       {
         value: 50,
-        color: "#b2dbbf",
-        highlight: "#5AD3D1",
-        label: "Green"
+        color: '#b2dbbf',
+        highlight: '#5AD3D1',
+        label: 'Green'
       },
       {
         value: 100,
-        color: "#70c1b3",
-        highlight: "#FFC870",
-        label: "Yellow"
+        color: '#70c1b3',
+        highlight: '#FFC870',
+        label: 'Yellow'
       }
     ]
 
     const chartOptions = {
       segmentShowStroke: false,
-      animationEasing: "easeOutQuart",
+      animationEasing: 'easeOutQuart',
       animateScale: false,
       animationSteps: 60
     }
