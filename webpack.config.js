@@ -5,15 +5,16 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var config = {
   cache: true,
   context: process.cwd(),
+  devServer: {
+    headers: { "Access-Control-Allow-Origin": "*" }
+  },
   entry: [
-    // 'webpack-dev-server/client?http://localhost:3001',
-    // 'webpack/hot/dev-server',
     './src/commons/app/index.js'
   ],
   output: {
     path: './src/client/public/assets/',
+    publicPath: 'http://localhost:8080/assets/',
     filename: 'bundle.js'
-    // publicPath: 'http://localhost:3001/assets/'
   },
   resolve: {
     modulesDirectories: ['node_modules'],
@@ -31,7 +32,7 @@ var config = {
         // It uses default OS directory by default. If you need
         // something more custom, pass a path to it.
         // I.e., babel?cacheDirectory=<path>
-        loaders: ['babel?cacheDirectory'],
+        loaders: ['react-hot', 'babel?cacheDirectory'],
         // Parse only app files! Without this it will go through
         // the entire project. In addition to being slow,
         // that will most likely result in an error.
@@ -39,7 +40,8 @@ var config = {
       },
       {
         test: /\.styl$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
+        // loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
+        loader: 'style!css?sourceMap!stylus?sourceMap&sourceComments'
       }
     ]
   },

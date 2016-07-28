@@ -52,7 +52,7 @@ export default class Home extends React.Component {
     }
 
     return (
-      <Layout type="inline" className="shape-mainLayout">
+      <Layout type="inline" className="Home shape-mainLayout">
         <Navigation />
         <LayoutMaster>
           <Container>
