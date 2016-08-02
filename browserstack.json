@@ -2,7 +2,7 @@
   "username": "BROWSERSTACK_USERNAME",
   "key": "BROWSERSTACK_KEY",
   "test_framework": "mocha",
-  "test_path": "tests/index.html",
+  "test_path": "tests/client/index.html",
   "browsers": [
     {
       "browser": "firefox",

@@ -1,14 +1,19 @@
 # Installation
-
 - nvm installed
 - browserstack credentials setup
 
-# Start
-```Shell
-# Starting webpack dev server
-webpack-dev-server --content-base src/client/public/ --inline --hot
+# Technical requirements
+- have free port
 
-# Starting node server
+# Start development
+```Shell
+# Install the right version of node
+nvm use / install
+
+# Install deps
+npm i
+
+# Starting node server, it will start a pm2 process and webpack-dev-server
 npm run start:dev
 ```
 

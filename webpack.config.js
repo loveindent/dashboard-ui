@@ -1,19 +1,22 @@
+var config = require('config');
 var path = require('path');
 var webpack = require('webpack'); //eslint-disable-line no-unused-vars
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var config = {
+var webpackConfig = {
   cache: true,
   context: process.cwd(),
   devServer: {
-    headers: { "Access-Control-Allow-Origin": "*" }
+    headers: { 'Access-Control-Allow-Origin': '*' },
+    port: 3001
   },
   entry: [
+    './src/commons/app/index.styl',
     './src/commons/app/index.js'
   ],
   output: {
     path: './src/client/public/assets/',
-    publicPath: 'http://localhost:8080/assets/',
+    publicPath: config.get('server.assetsBasePath'),
     filename: 'bundle.js'
   },
   resolve: {
@@ -46,12 +49,17 @@ var config = {
     ]
   },
   stylus: {
-    import: [path.join(process.cwd(), './src/client/style/index.styl')]
+    import: [path.join(process.cwd(), './config/style/index.styl')],
+    use: [function() {
+      return function(style) {
+        style.define('$config', config, true);
+      }
+    }()]
   }
 };
 
 if (process.env.NODE_ENV !== 'production') {
-  config.devtool = 'eval'; // This is not as dirty as it looks. It just generates source maps without being crazy slow.
+  webpackConfig.devtool = 'eval'; // This is not as dirty as it looks. It just generates source maps without being crazy slow.
 }
 
-module.exports = config;
+module.exports = webpackConfig;

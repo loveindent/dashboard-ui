@@ -106,7 +106,7 @@ export default class Home extends React.Component {
                 <header>
                   Icons
                 </header>
-                <div style={{fontSize: '31px'}}>
+                <div>
                   { icons }
                 </div>
               </Box>

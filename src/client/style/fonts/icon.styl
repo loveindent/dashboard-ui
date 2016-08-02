@@ -1,12 +1,13 @@
 // @stylint off
+$assetsBasePath = $config.server.assetsBasePath
 
 @font-face {
     font-family: 'icomoon';
-    src:    url('/assets/icon_font/fonts/icomoon.eot?mm9zby');
-    src:    url('/assets/icon_font/fonts/icomoon.eot?mm9zby#iefix') format('embedded-opentype'),
-        url('/assets/icon_font/fonts/icomoon.ttf?mm9zby') format('truetype'),
-        url('/assets/icon_font/fonts/icomoon.woff?mm9zby') format('woff'),
-        url('/assets/icon_font/fonts/icomoon.svg?mm9zby#icomoon') format('svg');
+    src:    url($assetsBasePath + '/icon_font/fonts/icomoon.eot?mm9zby');
+    src:    url($assetsBasePath + '/icon_font/fonts/icomoon.eot?mm9zby#iefix') format('embedded-opentype'),
+        url($assetsBasePath + '/icon_font/fonts/icomoon.ttf?mm9zby') format('truetype'),
+        url($assetsBasePath + '/icon_font/fonts/icomoon.woff?mm9zby') format('woff'),
+        url($assetsBasePath + '/icon_font/fonts/icomoon.svg?mm9zby#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }

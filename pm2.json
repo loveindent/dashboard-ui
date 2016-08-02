@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-ui",
+  "script": "./src/server",
+  "watch": ["config", "src/server"],
+  "ignore_watch" : ["**/*.styl", "**/*.marko.js"],
+  "watch_options": {
+    "followSymlinks": false
+  }
+}

@@ -1,3 +1,4 @@
+var config = require('config');
 var path = require('path');
 var webpack = require('webpack'); //eslint-disable-line no-unused-vars
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -17,7 +18,6 @@ var config = {
   output: {
     path: './tests/client/assets/',
     filename: 'bundle.js'
-    // publicPath: 'http://localhost:3001/assets/'
   },
   resolve: {
     modulesDirectories: ['node_modules'],
@@ -47,7 +47,12 @@ var config = {
     ]
   },
   stylus: {
-    import: [path.join(process.cwd(), './src/client/style/index.styl')]
+    import: [path.join(process.cwd(), './config/style/index.styl')],
+    use: [function() {
+      return function(style) {
+        style.define('$config', config, true);
+      }
+    }()]
   },
   externals: {
     jsdom: 'window',
