@@ -1,12 +1,10 @@
 import React from 'react'
 import classnames from 'classnames'
+import _ from 'lodash'
 
 export default class Input extends React.Component {
   static propTypes = {
     className: React.PropTypes.string,
-    type: React.PropTypes.oneOf(['text', 'password', 'number']),
-    placeholder: React.PropTypes.string,
-    value: React.PropTypes.string,
     label: React.PropTypes.string.isRequired,
     id: React.PropTypes.string.isRequired
   };
@@ -17,9 +15,10 @@ export default class Input extends React.Component {
 
   render() {
     var baseClass = 'Input'
-    const classes = [baseClass]
     var label
-
+    const classes = [baseClass]
+    const heritedProps = _.clone(this.props)
+    
     if (this.props.className) {
       classes.push(baseClass + '--' + this.props.className)
     }
@@ -32,11 +31,14 @@ export default class Input extends React.Component {
       )
     }
 
+    delete heritedProps.className
+    delete heritedProps.label
+    delete heritedProps.id
+
     return (
       <div className={classnames(classes) }>
         { label }
-        <input id={ this.props.id } type={ this.props.type } placeholder={ this.props.placeholder } value={ this.props.value }>
-        </input>
+        <input id={ this.props.id } {...heritedProps} />
       </div>
     )
   }
