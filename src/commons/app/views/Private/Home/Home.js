@@ -10,6 +10,7 @@ import {
   Pager,
   Layout,
   LayoutMaster,
+  Input,
   Icon
 } from '../../../../components'
 
@@ -117,6 +118,15 @@ export default class Home extends React.Component {
                 <p>Test d'un paragraphe</p>
                 <p>Test d'un paragraphe 2</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </Box>
+              <Box>
+                <header>
+                  Input
+                </header>
+                <div>
+                  <Input type="text" label="Magnifique input avec label" value="50">A</Input>
+                  <Input type="password" placeHolder="Magnifique input avec un placeholder">A</Input>
+                </div>
               </Box>
             </Grid>
             <h2>Native Elements</h2>
