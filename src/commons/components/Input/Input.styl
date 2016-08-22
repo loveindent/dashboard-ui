@@ -1,0 +1,31 @@
+$InputConfig = {
+  width: 100%
+  height: 50
+  radius: 5
+  border: {
+    size: 1
+    type: solid
+    color: #DDD
+    }
+  }
+
+input {
+    height: unit($InputConfig.height, 'px');
+    width: unit($InputConfig.width, '%');
+    border: unit($InputConfig.border.size, 'px') $InputConfig.border.type $InputConfig.border.color;
+    color: #cbcbcb;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.Input{
+  margin-bottom: 10px;
+  }
+
+  &__label {
+      display: block;
+      font-size: 1em;
+      margin-bottom: 5px;
+      color: #cbcbcb;
+      text-transform: uppercase;
+  }
