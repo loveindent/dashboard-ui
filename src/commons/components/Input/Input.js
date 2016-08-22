@@ -9,16 +9,12 @@ export default class Input extends React.Component {
     id: React.PropTypes.string.isRequired
   };
 
-  static defaultProps = {
-    type: 'text'
-  };
-
   render() {
     var baseClass = 'Input'
     var label
     const classes = [baseClass]
     const heritedProps = _.clone(this.props)
-    
+
     if (this.props.className) {
       classes.push(baseClass + '--' + this.props.className)
     }
