@@ -1,0 +1,69 @@
+// @stylint off
+$InputConfig = {
+  width: 100%,
+  height: 30,
+  radius: 3,
+  shadow: #ddd
+  border: {
+    size: 1,
+    type: solid,
+    color: #ddd
+  },
+  color: $colors.text,
+  padding: 10,
+  label: {
+    color: #cbcbcb
+  }
+}
+// @stylint on
+
+.Input {
+  margin-bottom: 10px
+
+  // @stylint off
+  ::-webkit-input-placeholder {
+   color: $InputConfig.label.color
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: $InputConfig.label.color
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: $InputConfig.label.color
+  }
+
+  :-ms-input-placeholder {
+    color: $InputConfig.label.color
+  }
+  // @stylint on
+
+  input {
+    padding: unit($InputConfig.padding, 'px')
+    width: unit($InputConfig.width, '%')
+    height: unit($InputConfig.height, 'px')
+    border: unit($InputConfig.border.size, 'px') $InputConfig.border.type $InputConfig.border.color
+    border-radius: unit($InputConfig.radius, 'px')
+    color: $InputConfig.color
+    transition: all 270ms ease
+
+    &:focus {
+      outline: 0
+      border-color: $colorVariations.primary.border
+      box-shadow: 0 0 10px $InputConfig.shadow
+    }
+  }
+
+  &--error input,
+  &--error input:focus {
+    border-color: $colorVariations.fifthiary.border
+  }
+
+  label {
+    display: block
+    margin-bottom: 5px
+    color: $InputConfig.label.color
+    font-size: 10px
+    text-transform: uppercase
+  }
+}
