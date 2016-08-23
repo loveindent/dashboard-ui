@@ -124,9 +124,9 @@ export default class Home extends React.Component {
                   Input
                 </header>
                 <div>
-                  <Input id="input-1" type="text" label="Input with label & value" value="50"/>
+                  <Input id="input-1" type="text" label="Input with label & value" defaultValue="50"/>
                   <Input id="input-2" type="text" label="Input with label .." placeholder=".. & placeholder"/>
-                  <Input id="input-3" type="text" className="error" label="Input with error" value="mail@mail"/>
+                  <Input id="input-3" type="text" className="error" label="Input with error" defaultValue="mail@mail"/>
                 </div>
               </Box>
             </Grid>
